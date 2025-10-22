@@ -18,7 +18,7 @@ const DevWorkPage = () => {
             "With expertise in computational design scripting, BIM integrations, and procedural generation, we build custom digital tools that allow architects to generate, analyze, and refine complex forms with precision. By bridging the gap between design artistry and digital efficiency, we transform abstract concepts into tangible, interactive experiences that elevate the architectural process.",
           ],
         }}
-        imageSrc={"/images/dev.webp"}
+        imageSrc={"images/dev.webp"}
       />
     </>
   );

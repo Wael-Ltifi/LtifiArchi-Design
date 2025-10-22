@@ -3,13 +3,13 @@ import { useGLTF, useVideoTexture } from "@react-three/drei";
 import { convertMaterialsToBasic } from "../../utils/convertToBasic";
 
 export default function Model(props) {
-  const { nodes, materials } = useGLTF("/models/LightRoom/Light_First.glb");
+  const { nodes, materials } = useGLTF("models/LightRoom/Light_First.glb");
   const newMaterials = convertMaterialsToBasic(materials);
 
   const desktopScreenRef = useRef();
   const iPhoneScreenRef = useRef();
 
-  const videoTexture = useVideoTexture("/videos/designwork.mp4", {
+  const videoTexture = useVideoTexture("videos/designwork.mp4", {
     crossOrigin: "anonymous",
     muted: true,
     loop: true,
@@ -53,6 +53,6 @@ export default function Model(props) {
   );
 }
 
-useGLTF.preload("/models/LightRoom/Light_First.glb");
+useGLTF.preload("models/LightRoom/Light_First.glb");
 
 

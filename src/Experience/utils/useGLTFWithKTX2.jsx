@@ -3,7 +3,7 @@ import { useThree } from "@react-three/fiber";
 import { KTX2Loader } from "three-stdlib";
 
 const ktx2Loader = new KTX2Loader();
-ktx2Loader.setTranscoderPath("/basis/");
+ktx2Loader.setTranscoderPath("basis/");
 
 export function useGLTFWithKTX2(path) {
   const { gl } = useThree();

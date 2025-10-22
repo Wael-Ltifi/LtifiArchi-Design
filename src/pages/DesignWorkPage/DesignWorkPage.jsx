@@ -17,7 +17,7 @@ const DesignWorkPage = () => {
             "At our core, we believe great architecture is not just about structures—it’s about the moments they create. Through a symphony of design principles, digital precision, and artistic intuition, we continue to push the boundaries of architectural storytelling, helping architects not just imagine spaces—but experience them before they exist.",
           ],
         }}
-        imageSrc={"/images/design.webp"}
+        imageSrc={"images/design.webp"}
       />
     </>
   );

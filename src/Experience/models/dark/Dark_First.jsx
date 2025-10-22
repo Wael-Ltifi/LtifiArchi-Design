@@ -5,14 +5,14 @@ import { convertMaterialsToBasic } from "../../utils/convertToBasic";
 
 export default function Model(props) {
   const { nodes, materials } = useGLTFWithKTX2(
-    "/models/DarkRoom/Dark_First.glb"
+    "models/DarkRoom/Dark_First.glb"
   );
   const newMaterials = convertMaterialsToBasic(materials);
 
   const macScreenRef = useRef();
   const computerScreenRef = useRef();
 
-  const videoTexture = useVideoTexture("/videos/devwork.mp4", {
+  const videoTexture = useVideoTexture("videos/devwork.mp4", {
     crossOrigin: "anonymous",
     muted: true,
     loop: true,

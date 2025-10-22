@@ -9,7 +9,7 @@ import { convertMaterialsToBasic } from "../../utils/convertToBasic";
 
 export default function Model(props) {
   const { nodes, materials } = useGLTFWithKTX2(
-    "/models/DarkRoom/Dark_Second.glb"
+    "models/DarkRoom/Dark_Second.glb"
   );
 
   const newMaterials = convertMaterialsToBasic(materials);

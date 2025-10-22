@@ -8,7 +8,7 @@ import { useGLTF } from "@react-three/drei";
 import { convertMaterialsToBasic } from "../../utils/convertToBasic";
 
 export default function Model(props) {
-  const { nodes, materials } = useGLTF("/models/LightRoom/Light_Third.glb");
+  const { nodes, materials } = useGLTF("models/LightRoom/Light_Third.glb");
 
   const newMaterials = convertMaterialsToBasic(materials);
 
@@ -23,7 +23,7 @@ export default function Model(props) {
   );
 }
 
-useGLTF.preload("/models/LightRoom/Light_Third.glb");
+useGLTF.preload("models/LightRoom/Light_Third.glb");
 
 
 
