@@ -1,2 +1,0 @@
-# LtifiArchi-Design
-Architecture portfolio 
