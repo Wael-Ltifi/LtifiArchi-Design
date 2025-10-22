@@ -4,23 +4,19 @@ import path from 'path'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/LtifiArchi-Design/',
+  base: '/LtifiArchi-Design/', // project page path
   build: {
     outDir: 'dist',
-    assetsDir: 'assets', // where JS/CSS/images/fonts go
+    assetsDir: '', // preserve folder structure
     rollupOptions: {
       output: {
-        // make chunk file paths relative
         entryFileNames: 'assets/[name]-[hash].js',
         chunkFileNames: 'assets/[name]-[hash].js',
-        assetFileNames: ({ name }) => {
-          if (/\.(woff2?|ttf|eot|svg)$/.test(name ?? '')) {
-            return 'assets/fonts/[name]-[hash][extname]'
-          }
-          if (/\.(png|jpe?g|gif|webp)$/.test(name ?? '')) {
-            return 'assets/images/[name]-[hash][extname]'
-          }
-          return 'assets/[name]-[hash][extname]'
+        assetFileNames: (assetInfo) => {
+          const parts = assetInfo.name?.split(path.sep)
+          if (!parts) return 'assets/[name]-[hash][extname]'
+          const folder = parts.length > 1 ? parts.slice(0, -1).join('/') : ''
+          return folder ? `${folder}/[name]-[hash][extname]` : '[name]-[hash][extname]'
         },
       },
     },
