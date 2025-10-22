@@ -3,7 +3,7 @@ import { useGLTF, useVideoTexture } from "@react-three/drei";
 import { convertMaterialsToBasic } from "../../utils/convertToBasic";
 
 export default function Model(props) {
-  const { nodes, materials } = useGLTF("/models/Light Room/Light_First.glb");
+  const { nodes, materials } = useGLTF("/models/LightRoom/Light_First.glb");
   const newMaterials = convertMaterialsToBasic(materials);
 
   const desktopScreenRef = useRef();
@@ -53,6 +53,6 @@ export default function Model(props) {
   );
 }
 
-useGLTF.preload("/models/Light Room/Light_First.glb");
+useGLTF.preload("/models/LightRoom/Light_First.glb");
 
 

@@ -12,7 +12,7 @@ import { useNavigate } from "react-router";
 export default function Model(props) {
   let navigate = useNavigate();
 
-  const { nodes } = useGLTF("/models/Dark Room/Dark_Targets.glb");
+  const { nodes } = useGLTF("/models/DarkRoom/Dark_Targets.glb");
 
   const whiteMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
 
@@ -89,7 +89,7 @@ export default function Model(props) {
   );
 }
 
-useGLTF.preload("/models/Dark Room/Dark_Targets.glb");
+useGLTF.preload("/models/DarkRoom/Dark_Targets.glb");
 
 
 
