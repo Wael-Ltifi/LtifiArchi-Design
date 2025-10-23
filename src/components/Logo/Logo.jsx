@@ -28,7 +28,7 @@ const Logo = () => {
 
   return (
     <div ref={logoRef}>
-      <NavLink to="/ltifiArchiDesign" className={logoClassNames}>
+      <NavLink to="/LtifiArchi-Design/ltifiArchiDesign" className={logoClassNames}>
         LtifiArchi-Design
       </NavLink>
     </div>

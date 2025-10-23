@@ -147,7 +147,7 @@ const Page = ({ requireDarkRoom, panelContent, imageSrc }) => {
   }`;
 
   const handleClick = () => {
-    navigate("/");
+    navigate("/LtifiArchi-Design/");
   };
 
   return (

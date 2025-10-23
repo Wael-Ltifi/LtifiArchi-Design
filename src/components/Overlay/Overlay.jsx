@@ -36,7 +36,14 @@ const Overlay = () => {
   }, [isExiting]);
 
   const handleClick = () => {
-    navigate("/");
+    navigate("/LtifiArchi-Design/");
+    gsap.to(overlayRef.current, {
+        opacity: 0,
+        duration: 0.9,
+        onComplete: () => {
+          gsap.set(overlayRef.current, { display: "none" });
+        },
+      });
   };
 
   return (

@@ -20,7 +20,7 @@ const Router = () => {
         }
       />
       <Route
-        path="about"
+        path="LtifiArchi-Design/about"
         element={
           <TransitionComponent>
             <AboutPage />
@@ -28,7 +28,7 @@ const Router = () => {
         }
       />
       <Route
-        path="dev-work"
+        path="LtifiArchi-Design/dev-work"
         element={
           <TransitionComponent>
             <DevWorkPage />
@@ -36,7 +36,7 @@ const Router = () => {
         }
       />
       <Route
-        path="design-work"
+        path="LtifiArchi-Design/design-work"
         element={
           <TransitionComponent>
             <DesignWorkPage />
@@ -44,7 +44,7 @@ const Router = () => {
         }
       />
         <Route
-        path="ltifiArchiDesign"
+        path="LtifiArchi-Design/ltifiArchiDesign"
         element={
           <TransitionComponent>
             <LtifiArchiDesign/>

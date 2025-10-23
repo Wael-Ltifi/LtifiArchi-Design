@@ -33,8 +33,8 @@ const TransitionComponent = ({ children }) => {
     }
 
     let requireDarkRoom = false;
-    if (location.pathname === "/about" || location.pathname === "/dev-work"||
-  location.pathname === "/ltifiArchiDesign") {
+    if (location.pathname === "/LtifiArchi-Design/about" || location.pathname === "/LtifiArchi-Design/dev-work"||
+  location.pathname === "/LtifiArchi-Design/ltifiArchiDesign") {
       requireDarkRoom = true;
     }
 
@@ -69,10 +69,10 @@ const TransitionComponent = ({ children }) => {
           let flagDelay = false;
           let requireDarkRoom = false;
           if (
-            location.pathname === "/about" ||
-            location.pathname === "/dev-work"
+            location.pathname === "/LtifiArchi-Design/about" ||
+            location.pathname === "/LtifiArchi-Design/dev-work"
             ||
-            location.pathname === "/ltifiArchiDesign"
+            location.pathname === "/LtifiArchi-Design/ltifiArchiDesign"
           ) {
             requireDarkRoom = true;
           }
