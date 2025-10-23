@@ -129,6 +129,59 @@ const Experience = () => {
     };
   });
 
+useEffect(() => {
+  const handleWheel = (e) => {
+    if (!cameraRef.current) return;
+    cameraRef.current.zoom += e.deltaY * -0.1;
+    cameraRef.current.zoom = Math.min(Math.max(cameraRef.current.zoom, 100), 700);
+    cameraRef.current.updateProjectionMatrix();
+  };
+
+  // Touch pinch zoom
+  let initialDistance = null;
+  const handleTouchStart = (e) => {
+    if (e.touches.length === 2) {
+      const dx = e.touches[0].clientX - e.touches[1].clientX;
+      const dy = e.touches[0].clientY - e.touches[1].clientY;
+      initialDistance = Math.sqrt(dx * dx + dy * dy);
+    }
+  };
+
+  const handleTouchMove = (e) => {
+    if (!cameraRef.current) return;
+    if (e.touches.length === 2 && initialDistance) {
+      const dx = e.touches[0].clientX - e.touches[1].clientX;
+      const dy = e.touches[0].clientY - e.touches[1].clientY;
+      const newDistance = Math.sqrt(dx * dx + dy * dy);
+
+      const zoomDelta = (newDistance - initialDistance) * 0.2;
+      cameraRef.current.zoom += zoomDelta * 0.01; // sensitivity
+      cameraRef.current.zoom = Math.min(Math.max(cameraRef.current.zoom, 100), 500);
+      cameraRef.current.updateProjectionMatrix();
+
+      initialDistance = newDistance;
+    }
+  };
+
+  const handleTouchEnd = () => {
+    initialDistance = null;
+  };
+
+  window.addEventListener("wheel", handleWheel);
+  window.addEventListener("touchstart", handleTouchStart);
+  window.addEventListener("touchmove", handleTouchMove);
+  window.addEventListener("touchend", handleTouchEnd);
+
+  return () => {
+    window.removeEventListener("wheel", handleWheel);
+    window.removeEventListener("touchstart", handleTouchStart);
+    window.removeEventListener("touchmove", handleTouchMove);
+    window.removeEventListener("touchend", handleTouchEnd);
+  };
+}, []);
+
+
+
   return (
     <>
       <Canvas style={{ position: "fixed", zIndex: 1, top: 0, left: 0 }}>

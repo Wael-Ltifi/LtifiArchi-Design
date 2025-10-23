@@ -47,7 +47,7 @@ export default function Model(props) {
           document.body.style.cursor = "auto";
         }}
         onClick={() => {
-          navigate("/design-work");
+          navigate("/LtifiArchi-Design/");
         }}
       />
       <mesh

@@ -54,7 +54,7 @@ const Scene = ({ pointerRef }) => {
     // console.log(camera.current.rotation);
     // console.log(camera.current.zoom);
 
-    const targetRotation = pointerRef.current.x * Math.PI * 0.032;
+    const targetRotation = pointerRef.current.x * Math.PI * 0.25;
 
     groupRotationRef.current = THREE.MathUtils.lerp(
       groupRotationRef.current,
